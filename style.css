@@ -15,3 +15,70 @@ p {
 a {
     text-decoration: none;
 }
+
+.landing-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+}
+
+.landing-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 50px 0 50px 0;
+}
+
+.landing-content-top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+
+.landing-content-bottom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: left;
+    width: 50%;
+}
+
+#landing-button {
+    display: flex;
+    flex-direction: row;
+}
+
+#landing-button a {
+    border-radius: 10px;
+    padding: 5px;
+    margin: 10px;
+}
+
+#primary-button {
+    background-color: #F9A826;
+    color: white;
+}
+
+#secondary-button {
+    border-style: solid;
+    border-width: 2px;
+    border-color: #F9A826;
+    color: #F9A826;
+}
+
+.form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.form-item {
+    margin: 10px;
+}
+
+
