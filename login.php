@@ -35,7 +35,7 @@
         </div>
         <div class="arahan-register">
             <p>Belum punya akun?</p>
-            <a href="register.html" class="login-daftar">Daftar</a>
+            <a href="register.php" class="login-daftar">Daftar</a>
         </div>
     </form>    
 </body>

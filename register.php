@@ -1,3 +1,24 @@
+<?php
+    require_once("config.php");
+
+    if (isset($_POST['register'])) {
+        $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
+        $password = password_hash($_POST["password"], PASSWORD_DEFAULT);
+
+        $sql = "INSERT INTO account (username, password) VALUES (:username, :password)";
+        $stmt = $db -> prepare($sql);
+
+        $params = array(
+            ":username" => $username,
+            ":password" => $password
+        );
+
+        $saved = $stmt->execute($params);
+
+        if ($saved) header("Location: login.php");
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,19 +44,19 @@
         </section>
     </div>
     <div class="overlay"></div>
-    <form action="index.html" method="post" class="box">
+    <form action="" method="POST" class="box">
         <div class="header">
             <h4>Daftar ke Catatanmu.id</h4>
         </div>
         <div class="login-area">
-            <input type="text" class="username" placeholder="Username">
-            <input type="password" class="password" placeholder="Password">
-            <input type="submit" value="Daftar" class="submit">
+            <input type="text" class="username" name="username" placeholder="Username">
+            <input type="password" class="password" name="password" placeholder="Password">
+            <input type="submit" value="Daftar" name="register" class="submit">
         </div>
         <div class="arahan-register">
             <p>Sudah punya akun?</p>
-            <a href="Login.html" class="login-daftar">Masuk</a>
+            <a href="Login.php" class="login-daftar">Masuk</a>
         </div>
-    </form>    
+    </form>
 </body>
 </html>
