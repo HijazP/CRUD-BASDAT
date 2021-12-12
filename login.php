@@ -1,3 +1,31 @@
+<?php
+require_once("config.php");
+
+if (isset($_POST['login'])) {
+    $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
+    $password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
+
+    $sql = "SELECT * FROM account WHERE username=:username";
+    $stmt = $db->prepare($sql);
+
+    $params = array(
+        ":username" => $username
+    );
+
+    $stmt->execute($params);
+
+    $user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    if ($user) {
+        if (password_verify($password, $user["password"])) {
+            session_start();
+            $_SESSION["user"] = $user;
+            header("Location: timeline.php");
+        }
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,20 +51,20 @@
         </section>
     </div>
     <div class="overlay"></div>
-    <form action="index.html" method="post" class="box">
+    <form action="login.php" method="POST" class="box">
         <div class="header">
             <h4>Masuk ke Catatanmu.id</h4>
         </div>
         <div class="login-area">
-            <input type="text" class="username" placeholder="Username">
-            <input type="password" class="password" placeholder="Password">
-            <input type="submit" value="Masuk" class="submit">
+            <input type="text" class="username" name="username" placeholder="Username">
+            <input type="password" class="password" name="password" placeholder="Password">
+            <input type="submit" name="login" value="Masuk" class="submit">
             <a href="#">Lupa kata sandi?</a>
         </div>
         <div class="arahan-register">
             <p>Belum punya akun?</p>
             <a href="register.php" class="login-daftar">Daftar</a>
         </div>
-    </form>    
+    </form>
 </body>
 </html>
