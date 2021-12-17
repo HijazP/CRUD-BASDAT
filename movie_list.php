@@ -12,7 +12,7 @@
 <?php
   
     $servername     = "localhost";
-    $database       = "lupa kemaren dari hanip"; 
+    $database       = "web_notes_app"; 
     $username       = "root";
     $password       = "";
 

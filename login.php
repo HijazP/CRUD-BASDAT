@@ -20,7 +20,7 @@ if (isset($_POST['login'])) {
         if (password_verify($password, $user["password"])) {
             session_start();
             $_SESSION["user"] = $user;
-            header("Location: timeline.php");
+            header("Location: dashboard.php");
         }
     }
 }
