@@ -1,0 +1,106 @@
+@font-face {
+    font-family: Allenoire;
+    src: url(font/Allenoire.otf) format(opentype);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+a{
+    text-decoration: none;
+}
+nav {
+    display: flex;
+    height: 100px;
+    background-color: #EDCF80;
+    flex-direction: row;
+    align-items: center;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.08);
+    border-radius: 0px 0px 20px 20px;
+}
+
+ul.nav_links {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    width: 75%;
+    justify-content: flex-end;
+}
+
+ul.nav_links li a {
+    text-decoration: none;
+}
+
+h1.catatanmu {
+    margin-left: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Allenoire;
+    font-size: 1.8em;
+    color: #6A532E;
+}
+
+.nav_links .dbref{
+    font-size: 36px;
+    color: #6A532E;
+}
+
+
+.greeting{
+    padding: 40px 0px 30px 100px;
+}
+
+.container{
+    width: 1100px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.row{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.cardslist{
+    flex: 1 1 21rem;
+    margin: 10px 20px;
+    background: #F3E2B5;
+    border-radius: 50px;
+    padding: 10px 20px;
+    align-items: center;
+    flex-wrap: wrap;
+    align-self: normal;
+}
+
+.cardslist .more{
+    display: inline-block;
+    text-align: center;
+    width: 100px;
+    padding: 10px;
+    color: #6A532E;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1em;
+    font-weight: 550;
+    background-color: #F8BE60;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    margin: 10px;
+    transition: .2s;
+    cursor: pointer;
+    align-items: center;
+}
+
+h2{
+    text-align: center;
+    align-items: center;
+}
