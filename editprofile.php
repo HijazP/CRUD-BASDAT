@@ -1,4 +1,7 @@
-<?php require_once("auth.php"); ?>
+<?php 
+require_once("auth.php"); 
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -13,10 +16,19 @@
     <title>Profil <?php echo $_SESSION["user"]["username"] ?> | Catatanmu.id</title>
 </head>
 <body>
-    <nav>
-        <h1>Catatanmu.id</h1>
-        <div><a href="user.php">Akun</a></div>
-    </nav>
+    <header class="navbar">
+        <nav>
+            <h1 class="catatanmu">Catatanmu.id</h1>
+            <ul class="nav_links">
+                <li>
+                    <a class="dashboard" href="dashboard.php">Dashboard</a>
+                    <a class="userlogo" href="profile.php"> 
+                        <img class="profilelogo" src="img/Avatar.svg" width="40em" href="profile.php">
+                    </a>
+                <li>
+            </ul>
+        </nav>
+    </header>
 
     <div class="box">
         <h2>Ubah Profil</h2>
