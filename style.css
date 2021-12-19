@@ -197,6 +197,16 @@ body{
     font-family: Allenoire;
 }
 
+.dashboard{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    line-height: 1.5;
+}
+
 .navbar{
     display: flex;
     justify-content: space-between;
@@ -216,7 +226,7 @@ li{
     float: right;
 }
 
-.dashboard{
+.db_ref{
     color: #6A532E;
     text-decoration: none;
 }
@@ -233,3 +243,8 @@ li{
     display: inline-block;
     padding: 0px 20px;
 }
+
+.greeting{
+    color: #6A532E;
+}
+
