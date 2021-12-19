@@ -44,7 +44,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css"/>
-    <title>wishlist <?php echo $_SESSION["user"]["username"] ?></title>
+    <title>Wishlist <?php echo $_SESSION["user"]["username"] ?></title>
 </head>
 <body>
     <header class="navbar">
@@ -85,6 +85,9 @@
             <tr>
                 <td><?php echo $i; ?></td>
                 <td class="task"><?php echo $row['wish_list_content']; ?></td>
+                <td>
+                    <a href="wledit.php?works_id=<?php echo $row['works_id'] ?>">edit</a>
+                </td>
                 <td class="delete">
                     <a href="wl.php?wl_task_del=<?php echo $row['works_id'] ?>">x</a>
                 </td>

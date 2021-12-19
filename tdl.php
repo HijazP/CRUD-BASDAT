@@ -21,7 +21,6 @@
             $user = $_SESSION["user"]["username"];
             mysqli_query($conn, "INSERT INTO works (username, to_do_list_task) VALUES ('$user', '$tdl_task')"); // nambah task
         }
-        
     }
 
     // delete task
@@ -85,6 +84,9 @@
             <tr>
                 <td><?php echo $i; ?></td>
                 <td class="task"><?php echo $row['to_do_list_task']; ?></td>
+                <td>
+                    <a href="tdledit.php?works_id=<?php echo $row['works_id'] ?>">edit</a>
+                </td>
                 <td class="delete">
                     <a href="tdl.php?tdl_task_del=<?php echo $row['works_id'] ?>">x</a>
                 </td>

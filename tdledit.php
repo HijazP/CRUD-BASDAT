@@ -1,0 +1,54 @@
+<?php
+    require("auth.php");
+    require("config.php");
+
+    $servername     = "localhost";
+    $database       = "web_notes_app"; 
+    $username       = "root";
+    $password       = "";
+
+    // jadi ini buat konekin nya
+    $conn = mysqli_connect($servername, $username, $password, $database);
+
+    $errors = ""; //declare variabel eror
+    $works_id = $_GET['works_id'];
+
+    // nampilin value di row sekarang
+    if (isset($_GET['works_id'])) {
+        $query = mysqli_query($conn, "SELECT * FROM works WHERE works_id = $works_id");
+        $row = mysqli_fetch_array($query);
+    } else {
+        header('Location: tdl.php');
+    }
+
+    if (isset($_POST['tdl_simpan'])) { // biar simpan buttonnya work
+        $tdl_edit = $_POST['tdl_edit'];
+        if (empty($tdl_edit)) {
+            $errors = "Tugas tidak boleh kosong"; // kalo kosong bakal eror
+        }
+        else {
+            mysqli_query($conn, "UPDATE `works` SET `to_do_list_task` = '$tdl_edit' WHERE `works`.`works_id` = $works_id;"); // nambah task
+            header('Location: tdl.php');
+        }
+    }
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit To-do List</title>
+</head>
+<body>
+    <form action="" method="POST">
+        <?php if (isset($errors)) { ?>
+        <p><?php echo $errors; ?></p>
+        <?php } ?>
+        <input type="text" name="tdl_edit" value="<?php echo $row['to_do_list_task']; ?>">
+        <button type="submit" name="tdl_simpan">Simpan</button>
+    </form>
+
+</body>
+</html>
