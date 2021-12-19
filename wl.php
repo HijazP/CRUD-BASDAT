@@ -47,6 +47,19 @@
     <title>wishlist <?php echo $_SESSION["user"]["username"] ?></title>
 </head>
 <body>
+    <header class="navbar">
+        <nav>
+            <h1 class="catatanmu">Catatanmu.id</h1>
+            <ul class="nav_links">
+                <li>
+                    <a class="dashboard" href="dashboard.php">Dashboard</a>
+                    <a class="userlogo" href="profile.php"> 
+                        <img class="profilelogo" src="img/Avatar.svg" width="40em" href="profile.php">
+                    </a>
+                <li>
+            </ul>
+        </nav>
+    </header>
     <a href="dashboard.php">Home</a>
     <h1>Wishlist</h1>
 

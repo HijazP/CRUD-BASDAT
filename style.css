@@ -191,3 +191,45 @@ body{
 .login-daftar:hover{
     background-color: #F9A826;
 }
+
+@font-face{
+    src: url(font/Allenoire.otf) format("opentype");
+    font-family: Allenoire;
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 10%;
+    background-color: #EDCF80;
+}
+
+.catatanmu{
+    font-family: Allenoire;
+    font-size: 1.8em;
+    color: #6A532E;
+}
+
+li{
+    font-size: 1em ;
+    float: right;
+}
+
+.dashboard{
+    color: #6A532E;
+    text-decoration: none;
+}
+
+.userlogo{
+    cursor: pointer;
+}
+
+.nav_links{
+    list-style: none;
+}
+
+.nav_links li{
+    display: inline-block;
+    padding: 0px 20px;
+}
