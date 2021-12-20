@@ -1,4 +1,12 @@
-<?php require_once("auth.php"); ?>
+<?php 
+require_once("auth.php"); 
+require_once("configMYSQLi.php");
+
+$uname = $_SESSION["user"]["username"];
+
+$profile = mysqli_query($conn, "SELECT * FROM profile WHERE username='$uname'");
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -27,18 +35,20 @@
         </nav>
     </header>
 
+    <?php while($data = mysqli_fetch_assoc($profile)) { ?>
     <div class="box">
         <h2>Profil</h2>
         <ul class="data-profil">
             <li>Username<br><?php echo $_SESSION["user"]["username"] ?></li>
-            <li>Email<br></li>
-            <li>Nama Depan<br></li>
-            <li>Nama Belakang<br></li>
-            <li>Tanggal Lahir<br></li>
-            <li>Nomor Telepon<br></li>
+            <li>Email<br><?php echo $data['email']; ?></li>
+            <li>Nama Depan<br><?php echo $data['first_name']; ?></li>
+            <li>Nama Belakang<br><?php echo $data['last_name']; ?></li>
+            <li>Tanggal Lahir<br><?php echo $data['born_date']; ?></li>
+            <li>Nomor Telepon<br><?php echo $data['phone_number']; ?></li>
         </ul>
+        <?php } ?>
 
-        <a href="editprofile.php">Edit</a>
+        <a href="editprofile.php?username=<?php echo $_SESSION["user"]["username"];?>">Edit</a>
         <a href="logout.php">Logout</a>
     </div>
 

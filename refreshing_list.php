@@ -11,13 +11,7 @@
 </head>
 <?php
   
-    $servername     = "localhost";
-    $database       = "lupa kemaren dari hanip"; 
-    $username       = "root";
-    $password       = "";
-
-    // jadi ini buat konekin nya
-    $conn   = mysqli_connect($servername, $username, $password, $database);
+    require("configMYSQLi.php");
 
     //jika user udah milih movie, masukin ke $cari
     if(isset($_GET['movie'])){

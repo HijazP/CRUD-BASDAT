@@ -1,5 +1,32 @@
 <?php 
-require_once("auth.php"); 
+require_once("auth.php");
+require("configMYSQLi.php");
+
+$uname = $_GET["username"];
+
+$profile = mysqli_query($conn, "SELECT * FROM profile WHERE username='$uname'");
+
+if (false == $profile) {
+    printf("error: %s\n", mysqli_error($conn));
+}
+
+if (isset($_POST['update'])) {
+    $email = $_POST['email'];
+    $first_name = $_POST['first_name'];
+    $last_name = $_POST['last_name'];
+    $born_date = $_POST['born_date'];
+    $phone_number = $_POST['phone_number'];
+
+    $update = mysqli_query($conn, "UPDATE profile SET 
+    email='$email', 
+    first_name='$first_name', 
+    last_name='$last_name', 
+    born_date='$born_date',
+    phone_number='$phone_number'
+    ");
+
+    header('Location: profile.php');
+}
 
 ?>
 
@@ -30,25 +57,26 @@ require_once("auth.php");
         </nav>
     </header>
 
+    <?php while ($row = mysqli_fetch_assoc($profile)) { ?>
     <div class="box">
         <h2>Ubah Profil</h2>
-        <form action="" method="">
+        <form action="" method="POST">
             <label for="">Username</label>
-            <input type="text" name="username" value=""><br>
+            <input type="text" name="username" value="<?php echo $row['username']; ?>"><br>
             <label for="">Email</label>
-            <input type="text" name="email" value=""><br>
+            <input type="text" name="email" value="<?php echo $row['email']; ?>"><br>
             <label for="">Nama Depan</label>
-            <input type="text" name="first_name" value=""><br>
+            <input type="text" name="first_name" value="<?php echo $row['first_name']; ?>"><br>
             <label for="">Nama Belakang</label>
-            <input type="text" name="last_name" value=""><br>
+            <input type="text" name="last_name" value="<?php echo $row['last_name']; ?>"><br>
             <label for="">Tanggal Lahir</label>
-            <input type="text" name="born_date" value=""><br>
+            <input type="date" name="born_date" value="<?php echo $row['born_date']; ?>"><br>
             <label for="">Nomor Telepon</label>
-            <input type="text" name="phone_number" value=""><br>
-            <button type="submit" name="profile_submit">Simpan</button>
+            <input type="text" name="phone_number" value="<?php echo $row['phone_number']; ?>"><br>
+            <button type="submit" name="update">Simpan</button>
         </form>
+        <?php } ?>
 
-        <a href="editprofile.php">Edit</a>
         <a href="logout.php">Logout</a>
     </div>
 

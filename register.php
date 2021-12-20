@@ -1,5 +1,5 @@
 <?php
-    require_once("config.php");
+    require_once("configPDO.php");
 
     if (isset($_POST['register'])) {
         $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
@@ -7,13 +7,19 @@
 
         $sql = "INSERT INTO account (username, password) VALUES (:username, :password)";
         $stmt = $db -> prepare($sql);
+        $copy = "INSERT INTO profile (username) VALUES (:username)";
+        $stmt_copy = $db -> prepare($copy);
 
         $params = array(
             ":username" => $username,
             ":password" => $password
         );
+        $params_copy = array(
+            ":username" => $username
+        );
 
         $saved = $stmt->execute($params);
+        $saved_copy = $stmt_copy->execute($params_copy);
 
         if ($saved) header("Location: login.php");
     }

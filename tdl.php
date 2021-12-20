@@ -1,14 +1,7 @@
 <?php
     require("auth.php");
-    require("config.php");
-
-    $servername     = "localhost";
-    $database       = "web_notes_app"; 
-    $username       = "root";
-    $password       = "";
-
-    // jadi ini buat konekin nya
-    $conn = mysqli_connect($servername, $username, $password, $database);
+    require("configPDO.php");
+    require("configMYSQLi.php");
 
     $errors = ""; //declare variabel eror
     

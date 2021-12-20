@@ -1,5 +1,5 @@
 <?php
-require_once("config.php");
+require_once("configPDO.php");
 
 if (isset($_POST['login'])) {
     $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
