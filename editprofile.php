@@ -28,6 +28,13 @@ if (isset($_POST['update'])) {
     header('Location: profile.php');
 }
 
+if (isset($_GET['delete'])) {
+    $delete = $_GET['delete'];
+    mysqli_query($conn, "DELETE FROM account WHERE username='$delete'");
+
+    header('location: index.html');
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -73,9 +80,11 @@ if (isset($_POST['update'])) {
             <input type="text" name="phone_number" value="<?php echo $row['phone_number']; ?>"><br>
             <button type="submit" name="update">Simpan</button>
         </form>
+            <a href="editprofile.php?delete=<?php echo $row['username']; ?>">Hapus Akun</a>
         <?php } ?>
 
         <a href="logout.php">Logout</a>
+
     </div>
 
 </body>
