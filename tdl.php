@@ -50,41 +50,47 @@
                 </li>
             </ul>
         </nav>
-    <a href="dashboard.php">Home</a>
-    <h1>To-do List</h1>
 
-    <form action="" method="POST">
-    <?php if (isset($errors)) { ?>
-        <p><?php echo $errors; ?></p>
-    <?php } ?>
-        <input type="text" name="tdl_task" placeholder="Tambahkan tugasmu">
-        <button type="submit" name="tdl_submit">+</button>
+    <h1 class="pagemark">To-do List</h1>
+
+    <form class="tdlbox" action="" method="POST">
+        <input class="tdlinput" type="text" name="tdl_task" placeholder="Tambahkan tugasmu">
+        <button class="add" type="submit" name="tdl_submit">+</button>
     </form>
+    
+    <div class="error">
+        <?php if (isset($errors)) { ?>
+            <p><?php echo $errors; ?><br></p>
+        <?php } ?>
+    </div>
 
-    <table>
-        <thead>
-            <tr>
-                <th>N</th>
-                <th>Task</th>
-                <th>Action</th>
-            </tr>
-        </thead>
+    <div class="tbl">
+        <table id="tabel">
+            <thead>
+                <tr>
+                    <th>N</th>
+                    <th>Task</th>
+                    <th colspan="2">Action</th>
+                </tr>
+            </thead>
 
-        <tbody>
-        <?php $i = 1; while ($row = mysqli_fetch_array($tdl_tasks)) { ?>
-            <tr>
-                <td><?php echo $i; ?></td>
-                <td class="task"><?php echo $row['to_do_list_task']; ?></td>
-                <td>
-                    <a href="tdledit.php?works_id=<?php echo $row['works_id'] ?>">edit</a>
-                </td>
-                <td class="delete">
-                    <a href="tdl.php?tdl_task_del=<?php echo $row['works_id'] ?>">x</a>
-                </td>
-            </tr>
+            <tbody>
+            <?php $i = 1; while ($row = mysqli_fetch_array($tdl_tasks)) { ?>
+                <tr>
+                    <td><?php echo $i; ?></td>
+                    <td class="task"><?php echo $row['to_do_list_task']; ?></td>
+                    <td width="10%">
+                        <a href="tdledit.php?works_id=<?php echo $row['works_id'] ?>">edit</a>
+                    </td>
+                    <td width="10%">
+                        <a href="tdl.php?tdl_task_del=<?php echo $row['works_id'] ?>">x</a>
+                    </td>
+                </tr>
 
-        <?php $i++; } ?>
-        </tbody>
-    </table>
+            <?php $i++; } ?>
+            </tbody>
+        </table>
+    </div>
+
 </body>
 </html>

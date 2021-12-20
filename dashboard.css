@@ -11,6 +11,7 @@ body {
 a{
     text-decoration: none;
 }
+
 nav {
     display: flex;
     height: 100px;
@@ -25,7 +26,7 @@ ul.nav_links {
     display: flex;
     align-items: center;
     list-style: none;
-    width: 72.5%;
+    width: 74%;
     justify-content: flex-end;
 }
 
@@ -53,13 +54,12 @@ a.db_ref{
     font-weight: 700;
     font-size: 20px;
     color: #6A532E;
-    margin-right: 10px;
+    margin-right: 60px;
     text-decoration: underline;
 }
 
-
 .greeting{
-    padding: 40px 0px 30px 100px;
+    padding: 60px 0px 50px 100px;
     color: #6A532E;
     font-family: Poppins;
     font-style: normal;
@@ -80,6 +80,8 @@ a.db_ref{
 }
 
 .cardslist{
+    display: flex;
+    flex-direction: column;
     flex: 1 1 21rem;
     margin: 10px 20px;
     background: #F3E2B5;
@@ -119,4 +121,86 @@ h2{
 .illust{
     justify-content: center;
     align-items: center;
+    margin-top: 10%;
+    margin-bottom: 10%;
 }
+
+
+.pagemark{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #6A532E;
+    margin-top: 1%;
+}
+
+.tdlbox{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1%;
+}
+
+.tdlinput{
+    width: 30%;
+    text-align: left;
+    padding: 10px 10px;
+    border-radius: 10px;
+    outline: #dac6a7;
+    border:  #6A532E solid 0.2em;
+    color: #394253;
+    background-color: white;
+}
+
+.add{
+    width: 30px;
+    height: 30px;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1em;
+    font-weight: 550;
+    background-color: #6A532E;
+    outline: none;
+    border: none;
+    border-radius: 30px;
+    margin: 10px;
+    transition: .2s;
+    cursor: pointer;
+}
+
+.error{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0.5%;
+}
+
+.tbl{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#tabel {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 50%;
+  }
+  
+  #tabel td, #tabel th {
+    border: 1px solid #6A532E;
+    padding: 8px;
+    text-align: center;
+  }
+  
+  #tabel tr:nth-child(even){background-color: #f2f2f2;}
+  
+  #tabel tr:hover {background-color: #ddd;}
+  
+  #tabel th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    background-color: #F3E2B5;
+    color: #6A532E;
+  }

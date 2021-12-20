@@ -52,41 +52,45 @@
             </ul>
         </nav>
 
-    <a href="dashboard.php">Home</a>
-    <h1>Wishlist</h1>
+    <h1 class="pagemark">Wishlist</h1>
 
-    <form action="" method="POST">
-    <?php if (isset($errors)) { ?>
-        <p><?php echo $errors; ?></p>
-    <?php } ?>
-        <input type="text" name="wl_task" placeholder="Tambahkan impianmu">
-        <button type="submit" name="wl_submit">+</button>
+    <form class="tdlbox" action="" method="POST">
+        <input class="tdlinput" type="text" name="wl_task" placeholder="Tambahkan impianmu">
+        <button class="add" type="submit" name="wl_submit">+</button>
     </form>
 
-    <table>
-        <thead>
-            <tr>
-                <th>N</th>
-                <th>Task</th>
-                <th>Action</th>
-            </tr>
-        </thead>
-
-        <tbody>
-        <?php $i = 1; while ($row = mysqli_fetch_array($wl_tasks)) { ?>
-            <tr>
-                <td><?php echo $i; ?></td>
-                <td class="task"><?php echo $row['wish_list_content']; ?></td>
-                <td>
-                    <a href="wledit.php?works_id=<?php echo $row['works_id'] ?>">edit</a>
-                </td>
-                <td class="delete">
-                    <a href="wl.php?wl_task_del=<?php echo $row['works_id'] ?>">x</a>
-                </td>
-            </tr>
-
-        <?php $i++; } ?>
-        </tbody>
-    </table>
+    <div class="error">
+        <?php if (isset($errors)) { ?>
+            <p><?php echo $errors; ?></p>
+        <?php } ?>
+    </div>
+    
+    <div class="tbl">
+        <table id="tabel">
+            <thead>
+                <tr>
+                    <th>N</th>
+                    <th>Task</th>
+                    <th colspan="2">Action</th>
+                </tr>
+            </thead>
+    
+            <tbody>
+            <?php $i = 1; while ($row = mysqli_fetch_array($wl_tasks)) { ?>
+                <tr>
+                    <td><?php echo $i; ?></td>
+                    <td class="task"><?php echo $row['wish_list_content']; ?></td>
+                    <td width="10%">
+                        <a href="wledit.php?works_id=<?php echo $row['works_id'] ?>">edit</a>
+                    </td>
+                    <td width="10%">
+                        <a href="wl.php?wl_task_del=<?php echo $row['works_id'] ?>">x</a>
+                    </td>
+                </tr>
+    
+            <?php $i++; } ?>
+            </tbody>
+        </table>
+    </div>
 </body>
 </html>
