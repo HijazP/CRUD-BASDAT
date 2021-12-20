@@ -35,10 +35,21 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style2.css"/>
+    <link rel="stylesheet" href="dashboard.css"/>
     <title>Edit Wishlist</title>
 </head>
 <body>
+        <nav>
+            <h1 class="catatanmu">Catatanmu.id</h1>
+            <ul class="nav_links">
+                <li><a class="db_ref" href="dashboard.php">Dashboard</a></li>
+                <li>    
+                    <a class="userlogo" href="profile.php"> 
+                        <img class="profilelogo" src="img/Avatar.svg" width="50em" href="profile.php">
+                    </a>
+                </li>
+            </ul>
+        </nav>
     <form action="" method="POST">
         <h1></h1>
         <input type="text" name="wl_edit" value="<?php echo $row['wish_list_content']; ?>">

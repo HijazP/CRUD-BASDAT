@@ -32,19 +32,19 @@
         <div class="row">
             <div class="cardslist">
                 <h2>To-do List</h2>
-                <img src="#" alt="TDL">
+                <img class="illust" src="img/undraw_booked_re_vtod.svg" width="190em" alt="TDL">
                 <a class="more" href="tdl.php">More</a>
             </div>
 
             <div class="cardslist">
                 <h2>Wishlist</h2>
-                <img src="#" alt="WL">
+                <img class="illust" src="img/undraw_wishlist_re_m7tv.svg" width="200em" alt="WL">
                 <a class="more" href="wl.php">More</a>
             </div>
 
             <div class="cardslist">
                 <h2>Refreshing List</h2>
-                <img src="#" alt="RL">
+                <img class="illust" src="img/undraw_refreshing_ncum.svg" width="200em" alt="RL">
                 <a class="more" href="rl.php">More</a>
             </div>
         </div>

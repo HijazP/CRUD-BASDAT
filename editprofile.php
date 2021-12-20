@@ -43,19 +43,17 @@ if (isset($_POST['update'])) {
     <title>Profil <?php echo $_SESSION["user"]["username"] ?> | Catatanmu.id</title>
 </head>
 <body>
-    <header class="navbar">
         <nav>
             <h1 class="catatanmu">Catatanmu.id</h1>
             <ul class="nav_links">
-                <li>
-                    <a class="dashboard" href="dashboard.php">Dashboard</a>
+                <li><a class="db_ref" href="dashboard.php">Dashboard</a></li>
+                <li>    
                     <a class="userlogo" href="profile.php"> 
-                        <img class="profilelogo" src="img/Avatar.svg" width="40em" href="profile.php">
+                        <img class="profilelogo" src="img/Avatar.svg" width="50em" href="profile.php">
                     </a>
-                <li>
+                </li>
             </ul>
         </nav>
-    </header>
 
     <?php while ($row = mysqli_fetch_assoc($profile)) { ?>
     <div class="box">

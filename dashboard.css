@@ -23,19 +23,19 @@ nav {
 
 ul.nav_links {
     display: flex;
-    flex-direction: row;
+    align-items: center;
     list-style: none;
-    width: 75%;
+    width: 72.5%;
     justify-content: flex-end;
 }
 
-ul.nav_links li a {
+ul.nav_links li{
     text-decoration: none;
 }
 
 @font-face{
-    font-family: Ale;
-    src: url(font/AllenoireFreePersonal-Regular.otf) format(opentype);
+    font-family: Allenoire;
+    src: url(font/Allenoire.otf) format("opentype");
 }
 
 h1.catatanmu {
@@ -43,15 +43,18 @@ h1.catatanmu {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: "Ale";
+    font-family: Allenoire;
     font-size: 2em;
     color: #6A532E;
 }
 
-a.dbref{
+a.db_ref{
     align-items: center;
-    font-size: 36px;
+    font-weight: 700;
+    font-size: 20px;
     color: #6A532E;
+    margin-right: 10px;
+    text-decoration: underline;
 }
 
 
@@ -82,6 +85,8 @@ a.dbref{
     background: #F3E2B5;
     border-radius: 50px;
     padding: 10px 20px;
+    flex-direction: row;
+    justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     align-self: normal;
@@ -108,5 +113,10 @@ a.dbref{
 
 h2{
     text-align: center;
+    align-items: center;
+}
+
+.illust{
+    justify-content: center;
     align-items: center;
 }
