@@ -1,8 +1,3 @@
-@font-face {
-    font-family: Allenoire;
-    src: url(font/Allenoire.otf) format(opentype);
-}
-
 * {
     margin: 0;
     padding: 0;
@@ -38,17 +33,23 @@ ul.nav_links li a {
     text-decoration: none;
 }
 
+@font-face{
+    font-family: Ale;
+    src: url(font/AllenoireFreePersonal-Regular.otf) format(opentype);
+}
+
 h1.catatanmu {
     margin-left: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: Allenoire;
-    font-size: 1.8em;
+    font-family: "Ale";
+    font-size: 2em;
     color: #6A532E;
 }
 
-.nav_links .dbref{
+a.dbref{
+    align-items: center;
     font-size: 36px;
     color: #6A532E;
 }
@@ -56,6 +57,11 @@ h1.catatanmu {
 
 .greeting{
     padding: 40px 0px 30px 100px;
+    color: #6A532E;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 30px;
 }
 
 .container{
