@@ -29,14 +29,14 @@
     if (isset($_GET['movie_del'])) {
         $fk_movie_id = $_GET['movie_del'];
         mysqli_query($conn, "DELETE FROM non_works WHERE fk_movie_id=$fk_movie_id"); // delete di db nya
-        header('location: rl1.php');
+        header('location: rl.php');
     }
 
     // ketika dideklarasikan maka akan menghapus data staycation dari tabel non_works
     if (isset($_GET['staycation_del'])) {
         $fk_staycation_id = $_GET['staycation_del'];
         mysqli_query($conn, "DELETE FROM non_works WHERE fk_staycation_id=$fk_staycation_id"); // delete di db nya
-        header('location: rl1.php');
+        header('location: rl.php');
     }
 ?>
 
@@ -110,7 +110,7 @@
                     <td><?php echo $i; ?></td>
                     <td class="task">Menonton film <?php echo $row['title']; ?></td>
                     <td width="10%">
-                        <a href="rl1.php?movie_del=<?php echo $row['fk_movie_id'] ?>">
+                        <a href="rl.php?movie_del=<?php echo $row['fk_movie_id'] ?>">
                             <img class="deletebtn" src="img/trash.svg" width="20em" href="rl.php?movie_del=<?php echo $row['fk_movie_id'] ?>">
                         </a>
                     </td>
@@ -122,7 +122,7 @@
                     <td><?php echo $i; ?></td>
                     <td class="task">Pergi ke <?php echo $row['staycation_place']; ?></td>
                     <td width="10%">
-                        <a href="rl1.php?staycation_del=<?php echo $row['fk_staycation_id'] ?>">
+                        <a href="rl.php?staycation_del=<?php echo $row['fk_staycation_id'] ?>">
                             <img class="deletebtn" src="img/trash.svg" width="20em" href="rl.php?staycation_del=<?php echo $row['fk_staycation_id'] ?>">
                         </a>
                     </td>
