@@ -61,7 +61,7 @@
             <input type="text" class="username" name="username" placeholder="Username">
             <input type="password" class="password" name="password" placeholder="Password">
             <input type="submit" name="login" value="Masuk" class="submit">
-            <a href="#">Lupa kata sandi?</a>
+            <a href="forgetpass.html">Lupa kata sandi?</a>
         </div>
         <div class="arahan-register">
             <p>Belum punya akun?</p>
