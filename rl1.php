@@ -105,8 +105,10 @@
                 <tr>
                     <td><?php echo $i; ?></td>
                     <td class="task">Menonton film <?php echo $row['title']; ?></td>
-                    <td class="delete">
-                        <a href="rl1.php?movie_del=<?php echo $row['fk_movie_id'] ?>">x</a>
+                    <td width="10%">
+                        <a href="rl1.php?movie_del=<?php echo $row['fk_movie_id'] ?>">
+                            <img class="deletebtn" src="img/trash.svg" width="20em" href="rl1.php?movie_del=<?php echo $row['fk_movie_id'] ?>">
+                        </a>
                     </td>
                 </tr>
             <?php $i++; } ?>
@@ -115,8 +117,10 @@
                 <tr>
                     <td><?php echo $i; ?></td>
                     <td class="task">Pergi ke <?php echo $row['staycation_place']; ?></td>
-                    <td class="delete">
-                        <a href="rl1.php?staycation_del=<?php echo $row['fk_staycation_id'] ?>">x</a>
+                    <td width="10%">
+                        <a href="rl1.php?staycation_del=<?php echo $row['fk_staycation_id'] ?>">
+                            <img class="deletebtn" src="img/trash.svg" width="20em" href="rl1.php?staycation_del=<?php echo $row['fk_staycation_id'] ?>">
+                        </a>
                     </td>
                 </tr>
             <?php $i++; } ?>

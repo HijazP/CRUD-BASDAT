@@ -175,6 +175,14 @@ h2{
     margin-left: 3%;
 }
 
+.deletebtn{
+    fill: #6A532E;
+}
+
+.editbtn{
+    fill: #6A532E;
+}
+
 .add{
     width: 30px;
     height: 30px;
@@ -203,7 +211,7 @@ h2{
         background-color: #6A532E;
         outline: none;
         border: none;
-        border-radius: 8px;
+        border-radius: 8px;     
         margin: 10px;
         transition: .2s;
         cursor: pointer;

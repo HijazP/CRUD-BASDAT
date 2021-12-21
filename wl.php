@@ -81,10 +81,14 @@
                     <td><?php echo $i; ?></td>
                     <td class="task"><?php echo $row['wish_list_content']; ?></td>
                     <td width="10%">
-                        <a href="wledit.php?works_id=<?php echo $row['works_id'] ?>">edit</a>
+                        <a href="wledit.php?works_id=<?php echo $row['works_id'] ?>">
+                            <img class="editbtn" src="img/edit.svg" width="20em" href="wledit.php?works_id=<?php echo $row['works_id'] ?>">
+                        </a>
                     </td>
                     <td width="10%">
-                        <a href="wl.php?wl_task_del=<?php echo $row['works_id'] ?>">x</a>
+                        <a href="wl.php?wl_task_del=<?php echo $row['works_id'] ?>">
+                            <img class="deletebtn" src="img/trash.svg" width="20em" href="wl.php?wl_task_del=<?php echo $row['works_id'] ?>">
+                        </a>
                     </td>
                 </tr>
     

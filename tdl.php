@@ -80,10 +80,14 @@
                     <td><?php echo $i; ?></td>
                     <td class="task"><?php echo $row['to_do_list_task']; ?></td>
                     <td width="10%">
-                        <a href="tdledit.php?works_id=<?php echo $row['works_id'] ?>">edit</a>
+                        <a href="tdledit.php?works_id=<?php echo $row['works_id'] ?>">
+                            <img class="editbtn" src="img/edit.svg" width="20em" href="tdledit.php?works_id=<?php echo $row['works_id'] ?>">
+                        </a>
                     </td>
                     <td width="10%">
-                        <a href="tdl.php?tdl_task_del=<?php echo $row['works_id'] ?>">x</a>
+                        <a href="tdl.php?tdl_task_del=<?php echo $row['works_id'] ?>">
+                            <img class="deletebtn" src="img/trash.svg" width="20em" href="tdl.php?tdl_task_del=<?php echo $row['works_id'] ?>">
+                        </a>
                     </td>
                 </tr>
 

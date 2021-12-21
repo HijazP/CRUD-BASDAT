@@ -49,25 +49,5 @@
             </div>
         </div>
     </div>
-    
-    <!--<div class="cardslist">
-        <h2>To-do List</h2>
-        <img src="#" alt="TDL">
-        <a class="More" href="tdl.php">More</a>
-    </div>
-
-    <div class="cardslist">
-        <h2>Wishlist</h2>
-        <img src="#" alt="WL">
-        <a class="More" href="wl.php">More</a>
-    </div>
-
-    <div class="cardslist">
-        <h2>Refreshing List</h2>
-        <img src="#" alt="RL">
-        <a class="More" href="rl.php">More</a>
-    </div>
--->
-
 </body>
 </html>
