@@ -1,40 +1,45 @@
-<?php 
-require_once("auth.php");
-require("configMYSQLi.php");
+<?php
+    // koneksi ke database
+    require_once("auth.php");
+    require("configMYSQLi.php");
 
-$uname = $_GET["username"];
+    // mengambil username dari url
+    $uname = $_GET["username"];
 
-$profile = mysqli_query($conn, "SELECT * FROM profile WHERE username='$uname'");
+    // variabel untuk membaca data
+    $profile = mysqli_query($conn, "SELECT * FROM profile WHERE username='$uname'");
 
-if (false == $profile) {
-    printf("error: %s\n", mysqli_error($conn));
-}
+    // jika variabel bernilai false, maka tampilkan pesan error
+    if (false == $profile) {
+        printf("error: %s\n", mysqli_error($conn));
+    }
 
-if (isset($_POST['update'])) {
-    $email = $_POST['email'];
-    $first_name = $_POST['first_name'];
-    $last_name = $_POST['last_name'];
-    $born_date = $_POST['born_date'];
-    $phone_number = $_POST['phone_number'];
+    // ketika dideklarasikan maka akan mengubah data pada tabel profile
+    if (isset($_POST['update'])) {
+        $email = $_POST['email'];
+        $first_name = $_POST['first_name'];
+        $last_name = $_POST['last_name'];
+        $born_date = $_POST['born_date'];
+        $phone_number = $_POST['phone_number'];
 
-    $update = mysqli_query($conn, "UPDATE profile SET 
-    email='$email', 
-    first_name='$first_name', 
-    last_name='$last_name', 
-    born_date='$born_date',
-    phone_number='$phone_number'
-    ");
+        $update = mysqli_query($conn, "UPDATE profile SET 
+        email='$email', 
+        first_name='$first_name', 
+        last_name='$last_name', 
+        born_date='$born_date',
+        phone_number='$phone_number'
+        ");
 
-    header('Location: profile.php');
-}
+        header('Location: profile.php');
+    }
 
-if (isset($_GET['delete'])) {
-    $delete = $_GET['delete'];
-    mysqli_query($conn, "DELETE FROM account WHERE username='$delete'");
+    // ketika dideklarasikan maka akan menghapus data pada tabel account
+    if (isset($_GET['delete'])) {
+        $delete = $_GET['delete'];
+        mysqli_query($conn, "DELETE FROM account WHERE username='$delete'");
 
-    header('location: index.html');
-}
-
+        header('location: index.html');
+    }
 ?>
 
 <!DOCTYPE html>

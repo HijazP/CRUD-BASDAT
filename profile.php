@@ -1,11 +1,13 @@
-<?php 
-require_once("auth.php"); 
-require_once("configMYSQLi.php");
+<?php
+    // menghubungkan dengan database
+    require_once("auth.php"); 
+    require_once("configMYSQLi.php");
 
-$uname = $_SESSION["user"]["username"];
+    // variabel username dari auth.php
+    $uname = $_SESSION["user"]["username"];
 
-$profile = mysqli_query($conn, "SELECT * FROM profile WHERE username='$uname'");
-
+    // variabel untuk membaca data
+    $profile = mysqli_query($conn, "SELECT * FROM profile WHERE username='$uname'");
 ?>
 
 <!DOCTYPE html>
@@ -42,7 +44,7 @@ $profile = mysqli_query($conn, "SELECT * FROM profile WHERE username='$uname'");
             <tbody>
                     <tr>
                         <td>Username</td>
-                        <td><<?php echo $_SESSION["user"]["username"] ?></td>
+                        <td><?php echo $_SESSION["user"]["username"] ?></td>
                     </tr>
                     <tr>
                         <td>Email</td>
