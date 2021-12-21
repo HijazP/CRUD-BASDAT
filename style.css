@@ -232,59 +232,16 @@ body{
     background-color: #F9A826;
 }
 
-@font-face{
-    src: url(font/Allenoire.otf) format("opentype");
+@font-face {
     font-family: Allenoire;
-}
-
-.dashboard{
-    width: 100%;
-    min-height: 100vh;
+    src: url(font/Allenoire.otf) format("opentype");
+   }
+   
+   h1.catatanmu {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: white;
-    line-height: 1.5;
-}
-
-.navbar{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 30px 10%;
-    background-color: #EDCF80;
-}
-
-.catatanmu{
     font-family: Allenoire;
-    font-size: 1.8em;
-    color: #6A532E;
-}
-
-li{
-    font-size: 1em ;
-    float: right;
-}
-
-.db_ref{
-    color: #6A532E;
-    text-decoration: none;
-}
-
-.userlogo{
-    cursor: pointer;
-}
-
-.nav_links{
-    list-style: none;
-}
-
-.nav_links li{
-    display: inline-block;
-    padding: 0px 20px;
-}
-
-.greeting{
-    color: #6A532E;
-}
-
+    font-size: 2em;
+    color: #6a532e;
+   }
