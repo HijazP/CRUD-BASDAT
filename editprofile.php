@@ -73,7 +73,7 @@
 
     <div class="tbl">
         <form action="" method="POST">
-            <table id="tabel">
+            <table class="table-profile">
                 <tbody>
                     <tr>
                         <td><label for="">Username</label></td>
@@ -101,9 +101,11 @@
                     </tr>   
                 </tbody>
             </table>
-            <button class="simpan" type="submit" name="update">Simpan</button>
-            <a class="simpan" href="profile.php">Kembali</a>
-            <a class="logoutbtn" href="editprofile.php?delete=<?php echo $row['username']; ?>">Hapus Akun</a>
+            <div class="buttons">
+                <button class="simpan" type="submit" name="update">Simpan</button>
+                <a class="simpan" href="profile.php">Kembali</a>
+                <a class="delacc" href="editprofile.php?delete=<?php echo $row['username']; ?>">Hapus Akun</a>
+            </div>
             <?php } ?>
         </form>
 
