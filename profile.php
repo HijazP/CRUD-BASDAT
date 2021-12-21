@@ -34,20 +34,44 @@ $profile = mysqli_query($conn, "SELECT * FROM profile WHERE username='$uname'");
         </nav>
 
     <?php while($data = mysqli_fetch_assoc($profile)) { ?>
-    <div class="box">
-        <h2 class="pagemark">Profil</h2>
-        <ul class="data-profil">
-            <li>Username<br><?php echo $_SESSION["user"]["username"] ?></li>
-            <li>Email<br><?php echo $data['email']; ?></li>
-            <li>Nama Depan<br><?php echo $data['first_name']; ?></li>
-            <li>Nama Belakang<br><?php echo $data['last_name']; ?></li>
-            <li>Tanggal Lahir<br><?php echo $data['born_date']; ?></li>
-            <li>Nomor Telepon<br><?php echo $data['phone_number']; ?></li>
-        </ul>
-        <?php } ?>
+    
+    <h2 class="pagemark2">Profile</h2>
 
-        <a href="editprofile.php?username=<?php echo $_SESSION["user"]["username"];?>">Edit</a>
-        <a href="logout.php">Logout</a>
+    <div class="tbl">
+        <table id="tabel">
+            <tbody>
+                    <tr>
+                        <td>Username</td>
+                        <td><<?php echo $_SESSION["user"]["username"] ?></td>
+                    </tr>
+                    <tr>
+                        <td>Email</td>
+                        <td><?php echo $data['email']; ?></td>
+                    </tr>
+                    <tr>
+                        <td>Nama Depan</td>
+                        <td><?php echo $data['first_name']; ?></td>
+                    </tr>
+                    <tr>
+                        <td>Nama Belakang</td>
+                        <td><?php echo $data['last_name']; ?></td>
+                    </tr>
+                    <tr>
+                        <td>Tanggal Lahir</td>
+                        <td><?php echo $data['born_date']; ?></td>
+                    </tr>
+                    <tr>
+                        <td>Nomor Telepon</td>
+                        <td><?php echo $data['phone_number']; ?></td>
+                    </tr>
+                <?php } ?>
+            </tbody>
+        </table>
+
+
+            <a class="simpan" href="editprofile.php?username=<?php echo $_SESSION["user"]["username"];?>">Edit</a>
+            <a class="logoutbtn" href="logout.php">Logout</a>
+        </div>
     </div>
 
 </body>

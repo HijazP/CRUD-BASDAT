@@ -63,27 +63,44 @@ if (isset($_GET['delete'])) {
         </nav>
 
     <?php while ($row = mysqli_fetch_assoc($profile)) { ?>
-    <div class="box">
-        <h2>Ubah Profil</h2>
-        <form action="" method="POST">
-            <label for="">Username</label>
-            <input type="text" name="username" value="<?php echo $row['username']; ?>"><br>
-            <label for="">Email</label>
-            <input type="text" name="email" value="<?php echo $row['email']; ?>"><br>
-            <label for="">Nama Depan</label>
-            <input type="text" name="first_name" value="<?php echo $row['first_name']; ?>"><br>
-            <label for="">Nama Belakang</label>
-            <input type="text" name="last_name" value="<?php echo $row['last_name']; ?>"><br>
-            <label for="">Tanggal Lahir</label>
-            <input type="date" name="born_date" value="<?php echo $row['born_date']; ?>"><br>
-            <label for="">Nomor Telepon</label>
-            <input type="text" name="phone_number" value="<?php echo $row['phone_number']; ?>"><br>
-            <button type="submit" name="update">Simpan</button>
-        </form>
-            <a href="editprofile.php?delete=<?php echo $row['username']; ?>">Hapus Akun</a>
-        <?php } ?>
+        
+    <h2 class="pagemark2">Ubah Profil</h2>
 
-        <a href="logout.php">Logout</a>
+    <div class="tbl">
+        <form action="" method="POST">
+            <table id="tabel">
+                <tbody>
+                    <tr>
+                        <td><label for="">Username</label></td>
+                        <td><input type="text" name="username" value="<?php echo $row['username']; ?>"><br></td>
+                    </tr>
+                    <tr>
+                        <td><label for="">Email</label></td>
+                        <td><input type="text" name="email" value="<?php echo $row['email']; ?>"><br></td>
+                    </tr>
+                    <tr>
+                        <td><label for="">Nama Depan</label></td>
+                        <td><input type="text" name="first_name" value="<?php echo $row['first_name']; ?>"><br></td>
+                    </tr>
+                    <tr>
+                        <td><label for="">Nama Belakang</label></td>
+                        <td><input type="text" name="last_name" value="<?php echo $row['last_name']; ?>"><br></td>
+                    </tr>
+                    <tr>
+                        <td><label for="">Tanggal Lahir</label></td>
+                        <td><input type="date" name="born_date" value="<?php echo $row['born_date']; ?>"><br></td>
+                    </tr>
+                    <tr>
+                        <td><label for="">Nomor Telepon</label></td>
+                        <td><input type="text" name="phone_number" value="<?php echo $row['phone_number']; ?>"><br></td>
+                    </tr>   
+                </tbody>
+            </table>
+            <button class="simpan" type="submit" name="update">Simpan</button>
+            <a class="simpan" href="profile.php">Kembali</a>
+            <a class="logoutbtn" href="editprofile.php?delete=<?php echo $row['username']; ?>">Hapus Akun</a>
+            <?php } ?>
+        </form>
 
     </div>
 
