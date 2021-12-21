@@ -1,6 +1,8 @@
 <?php
+    // koneksi ke database
     require_once("configPDO.php");
 
+    // ketika dideklarasikan maka akan menambahkan data pada tabel account dan profile
     if (isset($_POST['register'])) {
         $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
         $password = password_hash($_POST["password"], PASSWORD_DEFAULT);

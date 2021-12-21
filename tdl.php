@@ -1,10 +1,12 @@
 <?php
+    // koneksi ke database
     require("auth.php");
     require("configPDO.php");
     require("configMYSQLi.php");
 
     $errors = ""; //declare variabel eror
     
+    // ketika dideklarasikan maka akan menambahkan data pada tabel works
     if (isset($_POST['tdl_submit'])) { // biar submit buttonnya work
         $tdl_task = $_POST['tdl_task'];
         if (empty($tdl_task)) {
@@ -16,13 +18,14 @@
         }
     }
 
-    // delete task
+    // ketika dideklarasikan maka akan menghapus data pada tabel works
     if (isset($_GET['tdl_task_del'])) {
         $works_id = $_GET['tdl_task_del'];
         mysqli_query($conn, "DELETE FROM works WHERE works_id=$works_id"); // delete di db nya
         header('location: tdl.php');
     }
 
+    // variabel untuk membaca data
     $tdl_tasks = mysqli_query($conn, "SELECT * FROM works WHERE to_do_list_task IS NOT NULL");
 ?>
 

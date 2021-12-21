@@ -1,12 +1,15 @@
 <?php
+    // koneksi ke database
     require("auth.php");
     require("configPDO.php");
     require("configMYSQLi.php");
 
     $errors = ""; //declare variabel eror
+
+    // mengambil works_id dari url
     $works_id = $_GET['works_id'];
 
-    // nampilin value di row sekarang
+    // ketika dideklarasikan maka akan membaca data dari tabel works
     if (isset($_GET['works_id'])) {
         $query = mysqli_query($conn, "SELECT * FROM works WHERE works_id = $works_id");
         $row = mysqli_fetch_array($query);
@@ -14,6 +17,7 @@
         header('Location: wl.php');
     }
 
+    // ketika dideklarasikan maka akan mengubah data dari tabel works
     if (isset($_POST['wl_simpan'])) { // biar simpan buttonnya work
         $wl_edit = $_POST['wl_edit'];
         if (empty($wl_edit)) {

@@ -1,8 +1,9 @@
 <?php
+    // variabel database
+    $servername = "localhost";
+    $database = "web_notes_app";
+    $username = "root";
+    $password = "";
 
-$servername = "localhost";
-$database = "web_notes_app";
-$username = "root";
-$password = "";
-
-$conn = mysqli_connect($servername, $username, $password, $database);
+    // koneksi ke database menggunakan mysqli
+    $conn = mysqli_connect($servername, $username, $password, $database);

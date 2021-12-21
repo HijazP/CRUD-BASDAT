@@ -1,10 +1,12 @@
 <?php
+    // koneksi ke database
     require("auth.php");
     require("configPDO.php");
     require("configMYSQLi.php");
 
     $errors = ""; //declare variabel eror
     
+    // ketika dideklarasikan maka akan menambahkan data pada tabel works
     if (isset($_POST['wl_submit'])) { // biar submit buttonnya work
         $wl_task = $_POST['wl_task'];
         if (empty($wl_task)) {
@@ -14,16 +16,16 @@
             $user = $_SESSION["user"]["username"];
             mysqli_query($conn, "INSERT INTO works (username, wish_list_content) VALUES ('$user', '$wl_task')"); // nambah task
         }
-        
     }
 
-    // delete task
+    // ketika dideklarasikan maka akan menghapus data pada tabel works
     if (isset($_GET['wl_task_del'])) {
         $works_id = $_GET['wl_task_del'];
         mysqli_query($conn, "DELETE FROM works WHERE works_id=$works_id"); // delete di db nya
         header('location: wl.php');
     }
 
+    // variabel untuk membaca data
     $wl_tasks = mysqli_query($conn, "SELECT * FROM works WHERE wish_list_content IS NOT NULL");
 ?>
 
