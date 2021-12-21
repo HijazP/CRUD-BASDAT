@@ -61,61 +61,67 @@
         </ul>
     </nav>
     
-    <!-- form submit movie -->
-    <form action="" method="POST">
-        <label for="">Judul Film - Genre - Rating</label><br>
-        <select name="movie_id">
-            <option value="">--Pilih Film--</option>
-            <?php while($row = mysqli_fetch_array($result_movies)) { ?>
-                <option value="<?php echo $row['movie_id']; ?>"><?php echo $row['title'] ?> - <?php echo $row['genre'] ?> - <?php echo $row['imdb_rating'] ?></option>
-            <?php } ?>
-        </select>
+    <h1 class="pagemark">Refreshing List</h1>
 
-        <button type="submit" name="submit_movie">+</button>
-    </form>
+    <div class="tdlbox">
+        <!-- form submit movie -->
+        <form action="" method="POST">
+            <label for="">Judul Film - Genre - Rating</label><br>
+            <select class="rlinput" name="movie_id">
+                <option value="">--Pilih Film--</option>
+                <?php while($row = mysqli_fetch_array($result_movies)) { ?>
+                    <option value="<?php echo $row['movie_id']; ?>"><?php echo $row['title'] ?> - <?php echo $row['genre'] ?> - <?php echo $row['imdb_rating'] ?></option>
+                <?php } ?>
+            </select>
+    
+            <button class="add" type="submit" name="submit_movie">+</button>
+        </form>
+    
+        <form class="kanan" action="" method="POST">
+            <label for="">Tempat - Provinsi</label><br>
+            <select class="rlinput" name="staycation_id">
+                <option value="">--Pilih Tempat Staycation--</option>
+                <?php while($row = mysqli_fetch_array($result_staycation)) { ?>
+                    <option value="<?php echo $row['staycation_id']; ?>"><?php echo $row['staycation_place'] ?> - <?php echo $row['province_name'] ?></option>
+                <?php } ?>
+            </select>
+    
+            <button class="add" type="submit" name="submit_staycation">+</button>
+        </form>
+    </div>
 
-    <form action="" method="POST">
-        <label for="">Tempat - Provinsi</label><br>
-        <select name="staycation_id">
-            <option value="">--Pilih Tempat Staycation--</option>
-            <?php while($row = mysqli_fetch_array($result_staycation)) { ?>
-                <option value="<?php echo $row['staycation_id']; ?>"><?php echo $row['staycation_place'] ?> - <?php echo $row['province_name'] ?></option>
-            <?php } ?>
-        </select>
-
-        <button type="submit" name="submit_staycation">+</button>
-    </form>
-
-    <table>
-        <thead>
-            <tr>
-                <th>N</th>
-                <th>Kegiatan</th>
-                <th>Action</th>
-            </tr>
-        </thead>
-
-        <tbody>
-        <?php $i = 1; while ($row = mysqli_fetch_array($result_rl_movies)) { ?>
-            <tr>
-                <td><?php echo $i; ?></td>
-                <td class="task">Menonton film <?php echo $row['title']; ?></td>
-                <td class="delete">
-                    <a href="rl1.php?movie_del=<?php echo $row['fk_movie_id'] ?>">x</a>
-                </td>
-            </tr>
-        <?php $i++; } ?>
-
-        <?php while ($row = mysqli_fetch_array($result_rl_staycation)) { ?>
-            <tr>
-                <td><?php echo $i; ?></td>
-                <td class="task">Pergi ke <?php echo $row['staycation_place']; ?></td>
-                <td class="delete">
-                    <a href="rl1.php?staycation_del=<?php echo $row['fk_staycation_id'] ?>">x</a>
-                </td>
-            </tr>
-        <?php $i++; } ?>
-        </tbody>
-    </table>
+    <div class="tbl2">
+        <table id="tabel2">
+            <thead>
+                <tr>
+                    <th>N</th>
+                    <th>Kegiatan</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+    
+            <tbody>
+            <?php $i = 1; while ($row = mysqli_fetch_array($result_rl_movies)) { ?>
+                <tr>
+                    <td><?php echo $i; ?></td>
+                    <td class="task">Menonton film <?php echo $row['title']; ?></td>
+                    <td class="delete">
+                        <a href="rl1.php?movie_del=<?php echo $row['fk_movie_id'] ?>">x</a>
+                    </td>
+                </tr>
+            <?php $i++; } ?>
+    
+            <?php while ($row = mysqli_fetch_array($result_rl_staycation)) { ?>
+                <tr>
+                    <td><?php echo $i; ?></td>
+                    <td class="task">Pergi ke <?php echo $row['staycation_place']; ?></td>
+                    <td class="delete">
+                        <a href="rl1.php?staycation_del=<?php echo $row['fk_staycation_id'] ?>">x</a>
+                    </td>
+                </tr>
+            <?php $i++; } ?>
+            </tbody>
+        </table>
+    </div>
 </body>
 </html>

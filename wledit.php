@@ -50,14 +50,17 @@
                 </li>
             </ul>
         </nav>
-    <form action="" method="POST">
-        <h1></h1>
-        <input type="text" name="wl_edit" value="<?php echo $row['wish_list_content']; ?>">
-        <button type="submit" name="wl_simpan">Simpan</button>
+
+    <form class="tdlbox" action="" method="POST">
+        <input class="tdlinput" type="text" name="wl_edit" value="<?php echo $row['wish_list_content']; ?>">
+        <button class="simpan" type="submit" name="wl_simpan">Simpan</button>
+    </form>
+
+    <div>
         <?php if (isset($errors)) { ?>
         <p><?php echo $errors; ?></p>
         <?php } ?>
-    </form>
+    </div>
 
 </body>
 </html>

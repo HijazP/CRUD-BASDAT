@@ -50,13 +50,18 @@
                 </li>
             </ul>
         </nav>
-    <form action="" method="POST">
+
+    <form class="tdlbox" action="" method="POST">
+        <input class="tdlinput" type="text" name="tdl_edit" value="<?php echo $row['to_do_list_task']; ?>">
+        <button class="simpan" type="submit" name="tdl_simpan">Simpan</button>
+    </form>
+    
+    <div class="error">
         <?php if (isset($errors)) { ?>
         <p><?php echo $errors; ?></p>
         <?php } ?>
-        <input type="text" name="tdl_edit" value="<?php echo $row['to_do_list_task']; ?>">
-        <button type="submit" name="tdl_simpan">Simpan</button>
-    </form>
+    </div>
+    
 
 </body>
 </html>

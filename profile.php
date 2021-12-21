@@ -35,7 +35,7 @@ $profile = mysqli_query($conn, "SELECT * FROM profile WHERE username='$uname'");
 
     <?php while($data = mysqli_fetch_assoc($profile)) { ?>
     <div class="box">
-        <h2>Profil</h2>
+        <h2 class="pagemark">Profil</h2>
         <ul class="data-profil">
             <li>Username<br><?php echo $_SESSION["user"]["username"] ?></li>
             <li>Email<br><?php echo $data['email']; ?></li>
