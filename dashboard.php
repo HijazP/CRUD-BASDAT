@@ -45,7 +45,7 @@
             <div class="cardslist">
                 <h2>Refreshing List</h2>
                 <img class="illust" src="img/undraw_departing_re_mlq3.svg" width="210em" alt="RL">
-                <a class="more" href="rl1.php">More</a>
+                <a class="more" href="rl.php">More</a>
             </div>
         </div>
     </div>
