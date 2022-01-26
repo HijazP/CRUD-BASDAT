@@ -4,9 +4,9 @@
 Repo ini merupakan tugas akhir dari mata kuliah KOM20F Basisdata untuk membuat aplikasi basisdata dengan metode CRUD (create, read, update, delete).
 
 <h1>Anggota Kelompok</h1>
-| Nama                   | NIM           |
-| -----------            | -----------   |
-| Hanif Ali Ramdani      | G6401201004   |
-| Faiz Byputra           | G6401201056   |
-| Azriel Izwanie         | G6401201106   |
-| Bares Manggala         | G6401201114   |
+|          Nama         |     NIM     |
+|:---------------------:|:-----------:|
+| Hanif Ali Ramdani     | G6401201004 |
+| Faiz Byputra          | G6401201056 |
+| Azriel Izwanie Arsyi  | G6401201106 |
+| Bares Manggala Samhas | G6401201114 |
