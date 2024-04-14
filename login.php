@@ -1,28 +1,22 @@
 <?php
     // koneksi ke database
-    require_once("configPDO.php");
+    require_once("connection.php");
 
     // ketika dideklarasikan maka akan membaca data pada tabel account
-    if (isset($_POST['login'])) {
+    if (isset($_POST['login']))
+    {
         $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
         $password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
+        $search = mysqli_query($conn, "SELECT * FROM account WHERE username='$username'");
+        $user = mysqli_fetch_assoc($search);
 
-        $sql = "SELECT * FROM account WHERE username=:username";
-        $stmt = $db->prepare($sql);
-
-        $params = array(
-            ":username" => $username
-        );
-
-        $stmt->execute($params);
-
-        $user = $stmt->fetch(PDO::FETCH_ASSOC);
-
-        if ($user) {
-            if (password_verify($password, $user["password"])) {
+        if ($user) 
+        {
+            if (password_verify($password, $user["password"])) 
+            {
                 session_start();
                 $_SESSION["user"] = $user;
-                header("Location: dashboard.php");
+                header("location: dashboard.php");
             }
         }
     }

@@ -1,29 +1,16 @@
 <?php
     // koneksi ke database
-    require_once("configPDO.php");
+    require_once("connection.php");
 
     // ketika dideklarasikan maka akan menambahkan data pada tabel account dan profile
-    if (isset($_POST['register'])) {
+    if (isset($_POST['register']))
+    {
         $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
         $password = password_hash($_POST["password"], PASSWORD_DEFAULT);
+        mysqli_query($conn, "INSERT INTO account (username, password) VALUES ('$username', '$password')");
+        mysqli_query($conn, "INSERT INTO profile (username) VALUES ('$username')");
 
-        $sql = "INSERT INTO account (username, password) VALUES (:username, :password)";
-        $stmt = $db -> prepare($sql);
-        $copy = "INSERT INTO profile (username) VALUES (:username)";
-        $stmt_copy = $db -> prepare($copy);
-
-        $params = array(
-            ":username" => $username,
-            ":password" => $password
-        );
-        $params_copy = array(
-            ":username" => $username
-        );
-
-        $saved = $stmt->execute($params);
-        $saved_copy = $stmt_copy->execute($params_copy);
-
-        if ($saved) header("Location: login.php");
+        header("location: login.php");
     }
 ?>
 

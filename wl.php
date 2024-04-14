@@ -1,8 +1,7 @@
 <?php
     // koneksi ke database
     require("auth.php");
-    require("configPDO.php");
-    require("configMYSQLi.php");
+    require("connection.php");
 
     $errors = ""; //declare variabel eror
     

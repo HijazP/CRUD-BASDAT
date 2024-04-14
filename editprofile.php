@@ -1,7 +1,7 @@
 <?php
     // koneksi ke database
     require_once("auth.php");
-    require("configMYSQLi.php");
+    require("connection.php");
 
     // mengambil username dari url
     $uname = $_GET["username"];

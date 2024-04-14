@@ -1,7 +1,7 @@
 <?php
     // menghubungkan dengan database
     require_once("auth.php"); 
-    require_once("configMYSQLi.php");
+    require_once("connection.php");
 
     // variabel username dari auth.php
     $uname = $_SESSION["user"]["username"];

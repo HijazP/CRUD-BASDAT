@@ -1,22 +1,23 @@
 <?php
     // koneksi ke database
     require("auth.php");
-    require("configPDO.php");
-    require("configMYSQLi.php");
+    require("connection.php");
 
     // variabel username dari auth.php
     $user = $_SESSION["user"]["username"];
     
     // ketika dideklarasikan maka akan menambahkan data movies ke tabel non_works
-    if (isset($_POST['submit_movie'])) { // submit movie ke non_works
+    if (isset($_POST['submit_movie'])) 
+    { // submit movie ke non_works
         $movie_id = $_POST['movie_id'];
-            mysqli_query($conn, "INSERT INTO non_works (username, fk_movie_id) VALUES ('$user', '$movie_id')"); // nambah task
+        mysqli_query($conn, "INSERT INTO non_works (username, fk_movie_id) VALUES ('$user', '$movie_id')"); // nambah task
     }
 
     // ketika dideklarasikan maka akan menambahkan data staycation ke tabel non_works
-    if (isset($_POST['submit_staycation'])) { // submit staycation ke non_works
+    if (isset($_POST['submit_staycation'])) 
+    { // submit staycation ke non_works
         $staycation_id = $_POST['staycation_id'];
-            mysqli_query($conn, "INSERT INTO non_works (username, fk_staycation_id) VALUES ('$user', '$staycation_id')"); // nambah task
+        mysqli_query($conn, "INSERT INTO non_works (username, fk_staycation_id) VALUES ('$user', '$staycation_id')"); // nambah task
     }
 
     // variabel untuk membaca data
@@ -26,14 +27,16 @@
     $result_rl_staycation = mysqli_query($conn, "SELECT non_works.fk_staycation_id, staycation.staycation_place FROM non_works INNER JOIN staycation ON non_works.fk_staycation_id = staycation.staycation_id");
 
     // ketika dideklarasikan maka akan menghapus data movies dari tabel non_works
-    if (isset($_GET['movie_del'])) {
+    if (isset($_GET['movie_del'])) 
+    {
         $fk_movie_id = $_GET['movie_del'];
         mysqli_query($conn, "DELETE FROM non_works WHERE fk_movie_id=$fk_movie_id"); // delete di db nya
         header('location: rl.php');
     }
 
     // ketika dideklarasikan maka akan menghapus data staycation dari tabel non_works
-    if (isset($_GET['staycation_del'])) {
+    if (isset($_GET['staycation_del'])) 
+    {
         $fk_staycation_id = $_GET['staycation_del'];
         mysqli_query($conn, "DELETE FROM non_works WHERE fk_staycation_id=$fk_staycation_id"); // delete di db nya
         header('location: rl.php');
