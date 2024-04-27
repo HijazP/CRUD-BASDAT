@@ -1,20 +1,11 @@
 <?php
-    $env = file_get_contents(__DIR__."/.env");
-    $lines = explode("\n", $env);
+    $conf = parse_ini_file(__DIR__ . "/conf.ini", true);
 
-    foreach($lines as $line)
-    {
-        preg_match("/([^#]+)\=(.*)/", $line, $matches);
-        if(isset($matches[2]))
-        {
-            putenv(trim($line));
-        }
-    } 
     // variabel database
-    $servername = getenv('servername');
-    $database = getenv('database');
-    $username = getenv('username');
-    $password = getenv('password');
+    $servername = $conf["db_dev"]["hostname"];
+    $username = $conf["db_dev"]["username"];
+    $password = $conf["db_dev"]["password"];
+    $database = $conf["db_dev"]["database"];
 
     // koneksi ke database menggunakan mysqli
     $conn = mysqli_connect($servername, $username, $password, $database);

@@ -25,7 +25,12 @@
     }
 
     // variabel untuk membaca data
-    $wl_tasks = mysqli_query($conn, "SELECT * FROM works WHERE wish_list_content IS NOT NULL");
+    $usn = $_SESSION["user"]["username"];
+    $stmt = $conn->prepare("SELECT * FROM works WHERE username=? AND wish_list_content IS NOT NULL");
+    $stmt->bind_param("s", $usn);
+    $stmt->execute();
+    $wl_tasks = $stmt->get_result();
+    // $wl_tasks = mysqli_query($conn, "SELECT * FROM works WHERE wish_list_content IS NOT NULL");
 ?>
 
 <!DOCTYPE html>
@@ -96,6 +101,10 @@
             <?php $i++; } ?>
             </tbody>
         </table>
+        
+        <?php
+            $stmt->close();
+        ?>
     </div>
 </body>
 </html>

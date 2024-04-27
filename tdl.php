@@ -25,7 +25,12 @@
     }
 
     // variabel untuk membaca data
-    $tdl_tasks = mysqli_query($conn, "SELECT * FROM works WHERE to_do_list_task IS NOT NULL");
+    $usn = $_SESSION["user"]["username"];
+    $stmt = $conn->prepare("SELECT * FROM works WHERE username=? AND to_do_list_task IS NOT NULL");
+    $stmt->bind_param("s", $usn);
+    $stmt->execute();
+    $tdl_tasks = $stmt->get_result();
+    // $tdl_tasks = mysqli_query($conn, "SELECT * FROM works WHERE username=$usn AND to_do_list_task IS NOT NULL");
 ?>
 
 <!DOCTYPE html>
@@ -96,6 +101,10 @@
             <?php $i++; } ?>
             </tbody>
         </table>
+        <?php
+            // Close the statement after processing the result set
+            $stmt->close();
+        ?>
     </div>
 
 </body>
