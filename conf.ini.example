@@ -1,0 +1,11 @@
+[db_dev]
+hostname = localhost
+username = root
+password = root
+database = database
+
+[db_prod]
+hostname = localhost
+username = root
+password = root
+database = database
