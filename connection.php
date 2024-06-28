@@ -12,9 +12,9 @@
     } 
     // variabel database
     $servername = getenv('servername');
-    $database = getenv('database');
-    $username = getenv('username');
-    $password = getenv('password');
+    $database = getenv('DB_DATABASE');
+    $username = getenv('DB_USERNAME');
+    $password = getenv('DB_PASSWORD');
 
     // koneksi ke database menggunakan mysqli
     $conn = mysqli_connect($servername, $username, $password, $database);

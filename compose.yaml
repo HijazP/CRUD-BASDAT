@@ -1,0 +1,49 @@
+name: catatanmuid
+
+services:
+  app:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    image: catatanmuid
+    container_name: catatanmuid-app
+    restart: unless-stopped
+    volumes:
+     - ./:/var/www/public/
+    networks:
+      - catatanmuid-network
+
+  db:
+    image: mysql:8.0
+    container_name: catatanmuid-db
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: web_notes_app
+      MYSQL_ROOT_PASSWORD: anjay
+      MYSQL_PASSWORD: anjay
+      MYSQL_USER: hijaz
+    volumes:
+      - ./database:/docker-entrypoint-initdb.d
+    networks:
+      - catatanmuid-network
+    depends_on:
+      - app
+
+  nginx:
+    image: nginx:1.17-alpine
+    container_name: catatanmuid-nginx
+    restart: unless-stopped
+    ports:
+      - 8000:80
+    volumes:
+      - ./:/var/www/public/
+      - ./webserver:/etc/nginx/conf.d/
+    networks:
+      - catatanmuid-network
+    depends_on:
+      - app
+
+
+networks:
+  catatanmuid-network:
+    driver: bridge
