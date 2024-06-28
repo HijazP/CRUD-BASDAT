@@ -1,0 +1,79 @@
+[27-Apr-2024 03:23:42 UTC] PHP Warning:  parse_ini_file(/home/faizbypm/public_html/catatanmu/conf.ini): Failed to open stream: No such file or directory in /home/faizbypm/public_html/catatanmu/connection.php on line 2
+[27-Apr-2024 03:23:42 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/faizbypm/public_html/catatanmu/connection.php on line 5
+[27-Apr-2024 03:23:42 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/faizbypm/public_html/catatanmu/connection.php on line 5
+[27-Apr-2024 03:23:42 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/faizbypm/public_html/catatanmu/connection.php on line 6
+[27-Apr-2024 03:23:42 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/faizbypm/public_html/catatanmu/connection.php on line 6
+[27-Apr-2024 03:23:42 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/faizbypm/public_html/catatanmu/connection.php on line 7
+[27-Apr-2024 03:23:42 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/faizbypm/public_html/catatanmu/connection.php on line 7
+[27-Apr-2024 03:23:42 UTC] PHP Warning:  Trying to access array offset on value of type bool in /home/faizbypm/public_html/catatanmu/connection.php on line 8
+[27-Apr-2024 03:23:42 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/faizbypm/public_html/catatanmu/connection.php on line 8
+[27-Apr-2024 03:23:42 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user ''@'localhost' (using password: NO) in /home/faizbypm/public_html/catatanmu/connection.php:11
+Stack trace:
+#0 /home/faizbypm/public_html/catatanmu/connection.php(11): mysqli_connect()
+#1 /home/faizbypm/public_html/catatanmu/login.php(3): require_once('/home/faizbypm/...')
+#2 {main}
+  thrown in /home/faizbypm/public_html/catatanmu/connection.php on line 11
+[27-Apr-2024 03:24:32 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'faizbypm_cttn'@'localhost' (using password: YES) in /home/faizbypm/public_html/catatanmu/connection.php:11
+Stack trace:
+#0 /home/faizbypm/public_html/catatanmu/connection.php(11): mysqli_connect()
+#1 /home/faizbypm/public_html/catatanmu/login.php(3): require_once('/home/faizbypm/...')
+#2 {main}
+  thrown in /home/faizbypm/public_html/catatanmu/connection.php on line 11
+[27-Apr-2024 03:24:38 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'faizbypm_cttn'@'localhost' (using password: YES) in /home/faizbypm/public_html/catatanmu/connection.php:11
+Stack trace:
+#0 /home/faizbypm/public_html/catatanmu/connection.php(11): mysqli_connect()
+#1 /home/faizbypm/public_html/catatanmu/login.php(3): require_once('/home/faizbypm/...')
+#2 {main}
+  thrown in /home/faizbypm/public_html/catatanmu/connection.php on line 11
+[27-Apr-2024 03:25:11 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'faizbypm_cttn'@'localhost' (using password: YES) in /home/faizbypm/public_html/catatanmu/connection.php:11
+Stack trace:
+#0 /home/faizbypm/public_html/catatanmu/connection.php(11): mysqli_connect()
+#1 /home/faizbypm/public_html/catatanmu/register.php(3): require_once('/home/faizbypm/...')
+#2 {main}
+  thrown in /home/faizbypm/public_html/catatanmu/connection.php on line 11
+[27-Apr-2024 03:25:16 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'faizbypm_cttn'@'localhost' (using password: YES) in /home/faizbypm/public_html/catatanmu/connection.php:11
+Stack trace:
+#0 /home/faizbypm/public_html/catatanmu/connection.php(11): mysqli_connect()
+#1 /home/faizbypm/public_html/catatanmu/register.php(3): require_once('/home/faizbypm/...')
+#2 {main}
+  thrown in /home/faizbypm/public_html/catatanmu/connection.php on line 11
+[27-Apr-2024 03:25:43 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'faizbypm_cttn'@'localhost' (using password: YES) in /home/faizbypm/public_html/catatanmu/connection.php:11
+Stack trace:
+#0 /home/faizbypm/public_html/catatanmu/connection.php(11): mysqli_connect()
+#1 /home/faizbypm/public_html/catatanmu/register.php(3): require_once('/home/faizbypm/...')
+#2 {main}
+  thrown in /home/faizbypm/public_html/catatanmu/connection.php on line 11
+[27-Apr-2024 03:26:15 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'faizbypm_cttn'@'localhost' (using password: YES) in /home/faizbypm/public_html/catatanmu/connection.php:11
+Stack trace:
+#0 /home/faizbypm/public_html/catatanmu/connection.php(11): mysqli_connect()
+#1 /home/faizbypm/public_html/catatanmu/register.php(3): require_once('/home/faizbypm/...')
+#2 {main}
+  thrown in /home/faizbypm/public_html/catatanmu/connection.php on line 11
+[27-Apr-2024 03:28:01 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'faizbypm_cttn'@'localhost' (using password: YES) in /home/faizbypm/public_html/catatanmu/connection.php:11
+Stack trace:
+#0 /home/faizbypm/public_html/catatanmu/connection.php(11): mysqli_connect()
+#1 /home/faizbypm/public_html/catatanmu/register.php(3): require_once('/home/faizbypm/...')
+#2 {main}
+  thrown in /home/faizbypm/public_html/catatanmu/connection.php on line 11
+[27-Apr-2024 03:28:35 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'faizbypm_cttn'@'localhost' (using password: YES) in /home/faizbypm/public_html/catatanmu/connection.php:11
+Stack trace:
+#0 /home/faizbypm/public_html/catatanmu/connection.php(11): mysqli_connect()
+#1 /home/faizbypm/public_html/catatanmu/register.php(3): require_once('/home/faizbypm/...')
+#2 {main}
+  thrown in /home/faizbypm/public_html/catatanmu/connection.php on line 11
+[27-Apr-2024 03:29:28 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'faizbypm_cttn'@'localhost' (using password: YES) in /home/faizbypm/public_html/catatanmu/connection.php:11
+Stack trace:
+#0 /home/faizbypm/public_html/catatanmu/connection.php(11): mysqli_connect()
+#1 /home/faizbypm/public_html/catatanmu/login.php(3): require_once('/home/faizbypm/...')
+#2 {main}
+  thrown in /home/faizbypm/public_html/catatanmu/connection.php on line 11
+[06-May-2024 12:09:23 UTC] PHP Warning:  Undefined array key "user" in /home/faizbypm/public_html/catatanmu/dashboard.php on line 29
+[06-May-2024 12:09:23 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/faizbypm/public_html/catatanmu/dashboard.php on line 29
+[06-May-2024 12:09:26 UTC] PHP Warning:  Undefined array key "user" in /home/faizbypm/public_html/catatanmu/tdl.php on line 28
+[06-May-2024 12:09:26 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/faizbypm/public_html/catatanmu/tdl.php on line 28
+[06-May-2024 12:09:26 UTC] PHP Warning:  Undefined array key "user" in /home/faizbypm/public_html/catatanmu/tdl.php on line 46
+[06-May-2024 12:09:26 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/faizbypm/public_html/catatanmu/tdl.php on line 46
+[06-May-2024 12:12:25 UTC] PHP Warning:  Undefined array key "user" in /home/faizbypm/public_html/catatanmu/wl.php on line 28
+[06-May-2024 12:12:25 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/faizbypm/public_html/catatanmu/wl.php on line 28
+[06-May-2024 12:12:25 UTC] PHP Warning:  Undefined array key "user" in /home/faizbypm/public_html/catatanmu/wl.php on line 46
+[06-May-2024 12:12:25 UTC] PHP Warning:  Trying to access array offset on value of type null in /home/faizbypm/public_html/catatanmu/wl.php on line 46
